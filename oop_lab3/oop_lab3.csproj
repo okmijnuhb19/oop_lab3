@@ -44,6 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BattleShips\AeroCarrier.cs" />
+    <Compile Include="BattleShips\BattleShip.cs" />
+    <Compile Include="BattleShips\BattleWagon.cs" />
+    <Compile Include="BattleShips\Boat.cs" />
+    <Compile Include="BattleShips\Cruiser.cs" />
+    <Compile Include="BattleShips\Destroyer.cs" />
+    <Compile Include="BattleShips\Submarine.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

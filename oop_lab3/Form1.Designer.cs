@@ -56,7 +56,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.quanityOfTorpedoTube = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.torpedosInTube = new System.Windows.Forms.NumericUpDown();
             this.SpeedOfTorpedos = new System.Windows.Forms.TextBox();
             this.shipSpeed = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -82,7 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfAirdefenceGun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfTorpedoTube)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.torpedosInTube)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfScout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfTorpedoPlane)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfBomber)).BeginInit();
@@ -368,17 +368,17 @@
             this.quanityOfTorpedoTube.Size = new System.Drawing.Size(38, 20);
             this.quanityOfTorpedoTube.TabIndex = 28;
             // 
-            // numericUpDown1
+            // torpedosInTube
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(175, 196);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.torpedosInTube.Location = new System.Drawing.Point(175, 196);
+            this.torpedosInTube.Maximum = new decimal(new int[] {
             4,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown1.TabIndex = 29;
+            this.torpedosInTube.Name = "torpedosInTube";
+            this.torpedosInTube.Size = new System.Drawing.Size(38, 20);
+            this.torpedosInTube.TabIndex = 29;
             // 
             // SpeedOfTorpedos
             // 
@@ -585,7 +585,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.shipSpeed);
             this.Controls.Add(this.SpeedOfTorpedos);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.torpedosInTube);
             this.Controls.Add(this.quanityOfTorpedoTube);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -621,7 +621,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfAirdefenceGun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.crew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfTorpedoTube)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.torpedosInTube)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfScout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfTorpedoPlane)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfBomber)).EndInit();
@@ -661,7 +661,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown quanityOfTorpedoTube;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown torpedosInTube;
         private System.Windows.Forms.TextBox SpeedOfTorpedos;
         private System.Windows.Forms.TextBox shipSpeed;
         private System.Windows.Forms.Label label10;
