@@ -7,3 +7,12 @@ C:\Users\Andrew\Documents\Visual Studio 2012\Projects\oop_lab3\oop_lab3\oop_lab3
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\oop_lab3\oop_lab3\oop_lab3\obj\Debug\oop_lab3.csproj.GenerateResource.Cache
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\oop_lab3\oop_lab3\oop_lab3\obj\Debug\oop_lab3.exe
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\oop_lab3\oop_lab3\oop_lab3\obj\Debug\oop_lab3.pdb
+F:\Учеба\repository\oop_lab3\oop_lab3\bin\Debug\oop_lab3.exe.config
+F:\Учеба\repository\oop_lab3\oop_lab3\obj\Debug\oop_lab3.exe
+F:\Учеба\repository\oop_lab3\oop_lab3\obj\Debug\oop_lab3.pdb
+F:\Учеба\repository\oop_lab3\oop_lab3\bin\Debug\oop_lab3.exe
+F:\Учеба\repository\oop_lab3\oop_lab3\bin\Debug\oop_lab3.pdb
+F:\Учеба\repository\oop_lab3\oop_lab3\obj\Debug\oop_lab3.csprojResolveAssemblyReference.cache
+F:\Учеба\repository\oop_lab3\oop_lab3\obj\Debug\oop_lab3.Form1.resources
+F:\Учеба\repository\oop_lab3\oop_lab3\obj\Debug\oop_lab3.Properties.Resources.resources
+F:\Учеба\repository\oop_lab3\oop_lab3\obj\Debug\oop_lab3.csproj.GenerateResource.Cache

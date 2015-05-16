@@ -11,5 +11,6 @@ namespace oop_lab3.BattleShips
         public int Towers { get; set; }
         public int CannonInTowers { get; set; }
         public double MainCaliber { get; set; }
+        public BattleWagon myType;
     }
 }

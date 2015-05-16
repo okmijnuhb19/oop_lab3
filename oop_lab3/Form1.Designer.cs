@@ -34,7 +34,6 @@
             this.aerocarrierButton = new System.Windows.Forms.Button();
             this.submarineButton = new System.Windows.Forms.Button();
             this.battleBoatButton = new System.Windows.Forms.Button();
-            this.clearButton = new System.Windows.Forms.Button();
             this.saveShipButton = new System.Windows.Forms.Button();
             this.loadShipButton = new System.Windows.Forms.Button();
             this.shipName = new System.Windows.Forms.TextBox();
@@ -77,6 +76,13 @@
             this.label17 = new System.Windows.Forms.Label();
             this.countryBox = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.addToList = new System.Windows.Forms.Button();
+            this.listedCruisers = new System.Windows.Forms.ListBox();
+            this.listedLineShips = new System.Windows.Forms.ListBox();
+            this.listedSubmarine = new System.Windows.Forms.ListBox();
+            this.listedAeroCarrier = new System.Windows.Forms.ListBox();
+            this.listedDestroyer = new System.Windows.Forms.ListBox();
+            this.listedBoat = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfCannonInTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfAirdefenceGun)).BeginInit();
@@ -98,6 +104,7 @@
             this.cruiserButton.TabIndex = 1;
             this.cruiserButton.Text = "Cruiser";
             this.cruiserButton.UseVisualStyleBackColor = true;
+            this.cruiserButton.Click += new System.EventHandler(this.cruiserButton_Click);
             // 
             // destroyerButton
             // 
@@ -108,6 +115,7 @@
             this.destroyerButton.TabIndex = 2;
             this.destroyerButton.Text = "Destroyer";
             this.destroyerButton.UseVisualStyleBackColor = true;
+            this.destroyerButton.Click += new System.EventHandler(this.destroyerButton_Click);
             // 
             // battleWagonButton
             // 
@@ -118,6 +126,7 @@
             this.battleWagonButton.TabIndex = 3;
             this.battleWagonButton.Text = "Linkor";
             this.battleWagonButton.UseVisualStyleBackColor = true;
+            this.battleWagonButton.Click += new System.EventHandler(this.battleWagonButton_Click);
             // 
             // aerocarrierButton
             // 
@@ -128,6 +137,7 @@
             this.aerocarrierButton.TabIndex = 4;
             this.aerocarrierButton.Text = "AeroCarrier";
             this.aerocarrierButton.UseVisualStyleBackColor = true;
+            this.aerocarrierButton.Click += new System.EventHandler(this.aerocarrierButton_Click);
             // 
             // submarineButton
             // 
@@ -138,6 +148,7 @@
             this.submarineButton.TabIndex = 5;
             this.submarineButton.Text = "Submarine";
             this.submarineButton.UseVisualStyleBackColor = true;
+            this.submarineButton.Click += new System.EventHandler(this.submarineButton_Click);
             // 
             // battleBoatButton
             // 
@@ -148,21 +159,12 @@
             this.battleBoatButton.TabIndex = 6;
             this.battleBoatButton.Text = "Boat";
             this.battleBoatButton.UseVisualStyleBackColor = true;
-            // 
-            // clearButton
-            // 
-            this.clearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.clearButton.Location = new System.Drawing.Point(12, 411);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(75, 23);
-            this.clearButton.TabIndex = 7;
-            this.clearButton.Text = "Clear";
-            this.clearButton.UseVisualStyleBackColor = true;
+            this.battleBoatButton.Click += new System.EventHandler(this.battleBoatButton_Click);
             // 
             // saveShipButton
             // 
             this.saveShipButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.saveShipButton.Location = new System.Drawing.Point(93, 411);
+            this.saveShipButton.Location = new System.Drawing.Point(460, 411);
             this.saveShipButton.Name = "saveShipButton";
             this.saveShipButton.Size = new System.Drawing.Size(75, 23);
             this.saveShipButton.TabIndex = 8;
@@ -172,7 +174,7 @@
             // loadShipButton
             // 
             this.loadShipButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.loadShipButton.Location = new System.Drawing.Point(174, 411);
+            this.loadShipButton.Location = new System.Drawing.Point(541, 411);
             this.loadShipButton.Name = "loadShipButton";
             this.loadShipButton.Size = new System.Drawing.Size(75, 23);
             this.loadShipButton.TabIndex = 9;
@@ -224,6 +226,11 @@
             this.quanityOfCannonInTower.Name = "quanityOfCannonInTower";
             this.quanityOfCannonInTower.Size = new System.Drawing.Size(38, 20);
             this.quanityOfCannonInTower.TabIndex = 14;
+            this.quanityOfCannonInTower.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // mainCaliber
             // 
@@ -560,11 +567,77 @@
             this.label18.TabIndex = 49;
             this.label18.Text = "Country";
             // 
+            // addToList
+            // 
+            this.addToList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addToList.Location = new System.Drawing.Point(182, 405);
+            this.addToList.Name = "addToList";
+            this.addToList.Size = new System.Drawing.Size(75, 23);
+            this.addToList.TabIndex = 50;
+            this.addToList.Text = "Add to list";
+            this.addToList.UseVisualStyleBackColor = true;
+            this.addToList.Click += new System.EventHandler(this.addToList_Click);
+            // 
+            // listedCruisers
+            // 
+            this.listedCruisers.FormattingEnabled = true;
+            this.listedCruisers.Location = new System.Drawing.Point(336, 10);
+            this.listedCruisers.Name = "listedCruisers";
+            this.listedCruisers.Size = new System.Drawing.Size(120, 95);
+            this.listedCruisers.TabIndex = 51;
+            // 
+            // listedLineShips
+            // 
+            this.listedLineShips.FormattingEnabled = true;
+            this.listedLineShips.Location = new System.Drawing.Point(336, 121);
+            this.listedLineShips.Name = "listedLineShips";
+            this.listedLineShips.Size = new System.Drawing.Size(120, 95);
+            this.listedLineShips.TabIndex = 52;
+            // 
+            // listedSubmarine
+            // 
+            this.listedSubmarine.FormattingEnabled = true;
+            this.listedSubmarine.Location = new System.Drawing.Point(336, 225);
+            this.listedSubmarine.Name = "listedSubmarine";
+            this.listedSubmarine.Size = new System.Drawing.Size(120, 95);
+            this.listedSubmarine.TabIndex = 53;
+            // 
+            // listedAeroCarrier
+            // 
+            this.listedAeroCarrier.FormattingEnabled = true;
+            this.listedAeroCarrier.Location = new System.Drawing.Point(709, 10);
+            this.listedAeroCarrier.Name = "listedAeroCarrier";
+            this.listedAeroCarrier.Size = new System.Drawing.Size(120, 95);
+            this.listedAeroCarrier.TabIndex = 54;
+            // 
+            // listedDestroyer
+            // 
+            this.listedDestroyer.FormattingEnabled = true;
+            this.listedDestroyer.Location = new System.Drawing.Point(709, 121);
+            this.listedDestroyer.Name = "listedDestroyer";
+            this.listedDestroyer.Size = new System.Drawing.Size(120, 95);
+            this.listedDestroyer.TabIndex = 55;
+            // 
+            // listedBoat
+            // 
+            this.listedBoat.FormattingEnabled = true;
+            this.listedBoat.Location = new System.Drawing.Point(709, 225);
+            this.listedBoat.Name = "listedBoat";
+            this.listedBoat.Size = new System.Drawing.Size(120, 95);
+            this.listedBoat.TabIndex = 56;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 477);
+            this.Controls.Add(this.listedBoat);
+            this.Controls.Add(this.listedDestroyer);
+            this.Controls.Add(this.listedAeroCarrier);
+            this.Controls.Add(this.listedSubmarine);
+            this.Controls.Add(this.listedLineShips);
+            this.Controls.Add(this.listedCruisers);
+            this.Controls.Add(this.addToList);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.countryBox);
             this.Controls.Add(this.label17);
@@ -607,7 +680,6 @@
             this.Controls.Add(this.shipName);
             this.Controls.Add(this.loadShipButton);
             this.Controls.Add(this.saveShipButton);
-            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.battleBoatButton);
             this.Controls.Add(this.submarineButton);
             this.Controls.Add(this.aerocarrierButton);
@@ -639,7 +711,6 @@
         private System.Windows.Forms.Button aerocarrierButton;
         private System.Windows.Forms.Button submarineButton;
         private System.Windows.Forms.Button battleBoatButton;
-        private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button saveShipButton;
         private System.Windows.Forms.Button loadShipButton;
         private System.Windows.Forms.TextBox shipName;
@@ -682,6 +753,13 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox countryBox;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button addToList;
+        private System.Windows.Forms.ListBox listedCruisers;
+        private System.Windows.Forms.ListBox listedLineShips;
+        private System.Windows.Forms.ListBox listedSubmarine;
+        private System.Windows.Forms.ListBox listedAeroCarrier;
+        private System.Windows.Forms.ListBox listedDestroyer;
+        private System.Windows.Forms.ListBox listedBoat;
     }
 }
 

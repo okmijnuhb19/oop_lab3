@@ -14,5 +14,6 @@ namespace oop_lab3.BattleShips
         public int TorpedoTubes { get; set; }
         public int TorpedoInTubes { get; set; }
         public int TorpedoSpeed { get; set; }
+        public Destroyer myType;
     }
 }

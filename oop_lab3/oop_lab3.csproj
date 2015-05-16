@@ -48,6 +48,7 @@
     <Compile Include="BattleShips\BattleShip.cs" />
     <Compile Include="BattleShips\BattleWagon.cs" />
     <Compile Include="BattleShips\Boat.cs" />
+    <Compile Include="BattleShips\CriserBuilder.cs" />
     <Compile Include="BattleShips\Cruiser.cs" />
     <Compile Include="BattleShips\Destroyer.cs" />
     <Compile Include="BattleShips\Submarine.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
