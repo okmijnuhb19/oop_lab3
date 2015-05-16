@@ -1,0 +1,9 @@
+C:\Users\Andrew\Documents\Visual Studio 2012\Projects\oop_lab3\oop_lab3\oop_lab3\bin\Debug\oop_lab3.exe.config
+C:\Users\Andrew\Documents\Visual Studio 2012\Projects\oop_lab3\oop_lab3\oop_lab3\bin\Debug\oop_lab3.exe
+C:\Users\Andrew\Documents\Visual Studio 2012\Projects\oop_lab3\oop_lab3\oop_lab3\bin\Debug\oop_lab3.pdb
+C:\Users\Andrew\Documents\Visual Studio 2012\Projects\oop_lab3\oop_lab3\oop_lab3\obj\Debug\oop_lab3.csprojResolveAssemblyReference.cache
+C:\Users\Andrew\Documents\Visual Studio 2012\Projects\oop_lab3\oop_lab3\oop_lab3\obj\Debug\oop_lab3.Form1.resources
+C:\Users\Andrew\Documents\Visual Studio 2012\Projects\oop_lab3\oop_lab3\oop_lab3\obj\Debug\oop_lab3.Properties.Resources.resources
+C:\Users\Andrew\Documents\Visual Studio 2012\Projects\oop_lab3\oop_lab3\oop_lab3\obj\Debug\oop_lab3.csproj.GenerateResource.Cache
+C:\Users\Andrew\Documents\Visual Studio 2012\Projects\oop_lab3\oop_lab3\oop_lab3\obj\Debug\oop_lab3.exe
+C:\Users\Andrew\Documents\Visual Studio 2012\Projects\oop_lab3\oop_lab3\oop_lab3\obj\Debug\oop_lab3.pdb
