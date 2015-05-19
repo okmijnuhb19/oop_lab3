@@ -38,12 +38,9 @@
             this.loadShipButton = new System.Windows.Forms.Button();
             this.shipName = new System.Windows.Forms.TextBox();
             this.shipSeries = new System.Windows.Forms.TextBox();
-            this.shipTonnage = new System.Windows.Forms.TextBox();
             this.quanityOfTower = new System.Windows.Forms.NumericUpDown();
             this.quanityOfCannonInTower = new System.Windows.Forms.NumericUpDown();
-            this.mainCaliber = new System.Windows.Forms.ComboBox();
             this.quanityOfAirdefenceGun = new System.Windows.Forms.NumericUpDown();
-            this.airDefenceCaliber = new System.Windows.Forms.ComboBox();
             this.crew = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,8 +53,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.quanityOfTorpedoTube = new System.Windows.Forms.NumericUpDown();
             this.torpedosInTube = new System.Windows.Forms.NumericUpDown();
-            this.SpeedOfTorpedos = new System.Windows.Forms.TextBox();
-            this.shipSpeed = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -83,6 +78,11 @@
             this.listedAeroCarrier = new System.Windows.Forms.ListBox();
             this.listedDestroyer = new System.Windows.Forms.ListBox();
             this.listedBoat = new System.Windows.Forms.ListBox();
+            this.mainCaliber = new System.Windows.Forms.NumericUpDown();
+            this.airDefenceCaliber = new System.Windows.Forms.NumericUpDown();
+            this.shipSpeed = new System.Windows.Forms.NumericUpDown();
+            this.shipTonnage = new System.Windows.Forms.NumericUpDown();
+            this.SpeedOfTorpedos = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfCannonInTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfAirdefenceGun)).BeginInit();
@@ -93,6 +93,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numberOfTorpedoPlane)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfBomber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfFighter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainCaliber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airDefenceCaliber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shipSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shipTonnage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpeedOfTorpedos)).BeginInit();
             this.SuspendLayout();
             // 
             // cruiserButton
@@ -195,14 +200,6 @@
             this.shipSeries.Size = new System.Drawing.Size(132, 20);
             this.shipSeries.TabIndex = 11;
             // 
-            // shipTonnage
-            // 
-            this.shipTonnage.Location = new System.Drawing.Point(81, 64);
-            this.shipTonnage.Name = "shipTonnage";
-            this.shipTonnage.Size = new System.Drawing.Size(132, 20);
-            this.shipTonnage.TabIndex = 12;
-            this.shipTonnage.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
             // quanityOfTower
             // 
             this.quanityOfTower.Location = new System.Drawing.Point(81, 90);
@@ -232,14 +229,6 @@
             0,
             0});
             // 
-            // mainCaliber
-            // 
-            this.mainCaliber.FormattingEnabled = true;
-            this.mainCaliber.Location = new System.Drawing.Point(81, 117);
-            this.mainCaliber.Name = "mainCaliber";
-            this.mainCaliber.Size = new System.Drawing.Size(80, 21);
-            this.mainCaliber.TabIndex = 15;
-            // 
             // quanityOfAirdefenceGun
             // 
             this.quanityOfAirdefenceGun.Location = new System.Drawing.Point(83, 144);
@@ -251,14 +240,6 @@
             this.quanityOfAirdefenceGun.Name = "quanityOfAirdefenceGun";
             this.quanityOfAirdefenceGun.Size = new System.Drawing.Size(38, 20);
             this.quanityOfAirdefenceGun.TabIndex = 16;
-            // 
-            // airDefenceCaliber
-            // 
-            this.airDefenceCaliber.FormattingEnabled = true;
-            this.airDefenceCaliber.Location = new System.Drawing.Point(162, 143);
-            this.airDefenceCaliber.Name = "airDefenceCaliber";
-            this.airDefenceCaliber.Size = new System.Drawing.Size(51, 21);
-            this.airDefenceCaliber.TabIndex = 17;
             // 
             // crew
             // 
@@ -386,20 +367,6 @@
             this.torpedosInTube.Name = "torpedosInTube";
             this.torpedosInTube.Size = new System.Drawing.Size(38, 20);
             this.torpedosInTube.TabIndex = 29;
-            // 
-            // SpeedOfTorpedos
-            // 
-            this.SpeedOfTorpedos.Location = new System.Drawing.Point(83, 222);
-            this.SpeedOfTorpedos.Name = "SpeedOfTorpedos";
-            this.SpeedOfTorpedos.Size = new System.Drawing.Size(130, 20);
-            this.SpeedOfTorpedos.TabIndex = 30;
-            // 
-            // shipSpeed
-            // 
-            this.shipSpeed.Location = new System.Drawing.Point(81, 248);
-            this.shipSpeed.Name = "shipSpeed";
-            this.shipSpeed.Size = new System.Drawing.Size(132, 20);
-            this.shipSpeed.TabIndex = 31;
             // 
             // label10
             // 
@@ -626,11 +593,126 @@
             this.listedBoat.Size = new System.Drawing.Size(120, 95);
             this.listedBoat.TabIndex = 56;
             // 
+            // mainCaliber
+            // 
+            this.mainCaliber.Location = new System.Drawing.Point(83, 118);
+            this.mainCaliber.Maximum = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
+            this.mainCaliber.Minimum = new decimal(new int[] {
+            70,
+            0,
+            0,
+            0});
+            this.mainCaliber.Name = "mainCaliber";
+            this.mainCaliber.Size = new System.Drawing.Size(78, 20);
+            this.mainCaliber.TabIndex = 57;
+            this.mainCaliber.Value = new decimal(new int[] {
+            70,
+            0,
+            0,
+            0});
+            // 
+            // airDefenceCaliber
+            // 
+            this.airDefenceCaliber.Location = new System.Drawing.Point(167, 144);
+            this.airDefenceCaliber.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.airDefenceCaliber.Minimum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            this.airDefenceCaliber.Name = "airDefenceCaliber";
+            this.airDefenceCaliber.Size = new System.Drawing.Size(46, 20);
+            this.airDefenceCaliber.TabIndex = 58;
+            this.airDefenceCaliber.Value = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            // 
+            // shipSpeed
+            // 
+            this.shipSpeed.Location = new System.Drawing.Point(81, 248);
+            this.shipSpeed.Maximum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            this.shipSpeed.Minimum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.shipSpeed.Name = "shipSpeed";
+            this.shipSpeed.Size = new System.Drawing.Size(132, 20);
+            this.shipSpeed.TabIndex = 59;
+            this.shipSpeed.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // shipTonnage
+            // 
+            this.shipTonnage.Increment = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.shipTonnage.Location = new System.Drawing.Point(81, 67);
+            this.shipTonnage.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.shipTonnage.Minimum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.shipTonnage.Name = "shipTonnage";
+            this.shipTonnage.Size = new System.Drawing.Size(132, 20);
+            this.shipTonnage.TabIndex = 60;
+            this.shipTonnage.Value = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            // 
+            // SpeedOfTorpedos
+            // 
+            this.SpeedOfTorpedos.Location = new System.Drawing.Point(93, 222);
+            this.SpeedOfTorpedos.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.SpeedOfTorpedos.Name = "SpeedOfTorpedos";
+            this.SpeedOfTorpedos.Size = new System.Drawing.Size(120, 20);
+            this.SpeedOfTorpedos.TabIndex = 61;
+            this.SpeedOfTorpedos.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 477);
+            this.Controls.Add(this.SpeedOfTorpedos);
+            this.Controls.Add(this.shipTonnage);
+            this.Controls.Add(this.shipSpeed);
+            this.Controls.Add(this.airDefenceCaliber);
+            this.Controls.Add(this.mainCaliber);
             this.Controls.Add(this.listedBoat);
             this.Controls.Add(this.listedDestroyer);
             this.Controls.Add(this.listedAeroCarrier);
@@ -656,8 +738,6 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.shipSpeed);
-            this.Controls.Add(this.SpeedOfTorpedos);
             this.Controls.Add(this.torpedosInTube);
             this.Controls.Add(this.quanityOfTorpedoTube);
             this.Controls.Add(this.label9);
@@ -670,12 +750,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.crew);
-            this.Controls.Add(this.airDefenceCaliber);
             this.Controls.Add(this.quanityOfAirdefenceGun);
-            this.Controls.Add(this.mainCaliber);
             this.Controls.Add(this.quanityOfCannonInTower);
             this.Controls.Add(this.quanityOfTower);
-            this.Controls.Add(this.shipTonnage);
             this.Controls.Add(this.shipSeries);
             this.Controls.Add(this.shipName);
             this.Controls.Add(this.loadShipButton);
@@ -698,6 +775,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numberOfTorpedoPlane)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfBomber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfFighter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainCaliber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airDefenceCaliber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shipSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shipTonnage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpeedOfTorpedos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -715,12 +797,9 @@
         private System.Windows.Forms.Button loadShipButton;
         private System.Windows.Forms.TextBox shipName;
         private System.Windows.Forms.TextBox shipSeries;
-        private System.Windows.Forms.TextBox shipTonnage;
         private System.Windows.Forms.NumericUpDown quanityOfTower;
         private System.Windows.Forms.NumericUpDown quanityOfCannonInTower;
-        private System.Windows.Forms.ComboBox mainCaliber;
         private System.Windows.Forms.NumericUpDown quanityOfAirdefenceGun;
-        private System.Windows.Forms.ComboBox airDefenceCaliber;
         private System.Windows.Forms.NumericUpDown crew;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -733,8 +812,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown quanityOfTorpedoTube;
         private System.Windows.Forms.NumericUpDown torpedosInTube;
-        private System.Windows.Forms.TextBox SpeedOfTorpedos;
-        private System.Windows.Forms.TextBox shipSpeed;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -760,6 +837,11 @@
         private System.Windows.Forms.ListBox listedAeroCarrier;
         private System.Windows.Forms.ListBox listedDestroyer;
         private System.Windows.Forms.ListBox listedBoat;
+        private System.Windows.Forms.NumericUpDown mainCaliber;
+        private System.Windows.Forms.NumericUpDown airDefenceCaliber;
+        private System.Windows.Forms.NumericUpDown shipSpeed;
+        private System.Windows.Forms.NumericUpDown shipTonnage;
+        private System.Windows.Forms.NumericUpDown SpeedOfTorpedos;
     }
 }
 

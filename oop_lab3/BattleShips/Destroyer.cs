@@ -10,10 +10,13 @@ namespace oop_lab3.BattleShips
     {
         public int Towers { get; set; }
         public int CannonInTowers { get; set; }
-        public double MainCaliber { get; set; }
+        public int MainCaliber { get; set; }
         public int TorpedoTubes { get; set; }
         public int TorpedoInTubes { get; set; }
         public int TorpedoSpeed { get; set; }
-        public Destroyer myType;
+        public override BattleShipBuilder FactoryMethod()
+        {
+            return new DestroyerBuilder();
+        }
     }
 }

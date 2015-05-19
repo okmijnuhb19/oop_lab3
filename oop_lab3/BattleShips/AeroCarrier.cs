@@ -14,6 +14,9 @@ namespace oop_lab3.BattleShips
         public string BomberModel { get; set; }
         public int TorpedoPlanes { get; set; }
         public string TorpedoPlanesModel { get; set; }
-        public AeroCarrier myType;
+        public override BattleShipBuilder FactoryMethod()
+        {
+            return new AeroCarrierBuilder();
+        }
     }
 }

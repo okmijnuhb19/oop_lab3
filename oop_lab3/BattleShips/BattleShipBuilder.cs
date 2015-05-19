@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace oop_lab3.BattleShips
 {
-    class Boat:BattleShip
+    abstract class BattleShipBuilder
     {
-        public override BattleShipBuilder FactoryMethod()
-        {
-            return new BoatBuilder();
-        }
+        abstract public void Build(IShipsItems shipItems);
     }
 }

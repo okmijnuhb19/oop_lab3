@@ -10,7 +10,10 @@ namespace oop_lab3.BattleShips
     {
         public int Towers { get; set; }
         public int CannonInTowers { get; set; }
-        public double MainCaliber { get; set; }
-        public BattleWagon myType;
+        public int MainCaliber { get; set; }
+        public override BattleShipBuilder FactoryMethod()
+        {
+            return new BattleWagonBuilder();
+        }
     }
 }

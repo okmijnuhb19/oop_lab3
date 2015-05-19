@@ -18,19 +18,25 @@ namespace oop_lab3
 
     public interface IShipsItems 
     {
+        BindingList<BattleShips.Cruiser> cruiserList;
+        BindingList<BattleShips.Submarine> submarineList;
+        BindingList<BattleShips.BattleWagon> lineShipList;
+        BindingList<BattleShips.AeroCarrier> aerocarrierList;
+        BindingList<BattleShips.Destroyer> destroyerList;
+        BindingList<BattleShips.Boat> boatList;
         string Ship_name { get; }
         string Ship_series { get; }
         int Ship_tonnage { get; }
         int Towers { get; }
         int Cannon { get; }
-        double Mcaliber { get; }
+        int Mcaliber { get; }
         int Adgun { get; }
-        double Adcaliber { get; }
+        int Adcaliber { get; }
         int Ship_crew { get; }
         int Torpedo_tube { get; }
         int Torpedo_intube { get; }
         int Torpedo_speed { get; }
-        double Ship_speed { get; }
+        int Ship_speed { get; }
         int Aero_s_number { get; }
         int Aero_f_number { get; }
         int Aero_b_number { get; }
@@ -44,16 +50,17 @@ namespace oop_lab3
 
     public partial class Form1 : Form,IForm1,IShipsItems
     {
-        BindingList<BattleShips.Cruiser> cruiserList;
-        BindingList<BattleShips.Submarine> submarineList;
-        BindingList<BattleShips.BattleWagon> lineShipList;
-        BindingList<BattleShips.AeroCarrier> aerocarrierList;
-        BindingList<BattleShips.Destroyer> destroyerList;
-        BindingList<BattleShips.Boat> boatList;
+        public BindingList<BattleShips.Cruiser> cruiserList;
+        public BindingList<BattleShips.Submarine> submarineList;
+        public BindingList<BattleShips.BattleWagon> lineShipList;
+        public BindingList<BattleShips.AeroCarrier> aerocarrierList;
+        public BindingList<BattleShips.Destroyer> destroyerList;
+        public BindingList<BattleShips.Boat> boatList;
         BattleShips.BattleShip bs;
         public Form1()
         {
             InitializeComponent();
+            addToList.Click+=addToList_Click;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -88,27 +95,7 @@ namespace oop_lab3
             mainCaliber.Show();
             SpeedOfTorpedos.Show();
             Clear();
-            bs = new BattleShips.Cruiser();
-            /*BattleShips.Cruiser cruiser = new BattleShips.Cruiser();
-            cruiser.AirDefenceCaleber = Convert.ToDouble(airDefenceCaliber.Text);
-            cruiser.AirDefenceGuns = Convert.ToInt32(quanityOfAirdefenceGun.Value);
-            cruiser.CannonInTowers = Convert.ToInt32(quanityOfCannonInTower.Value);
-            cruiser.Country = countryBox.Text;
-            cruiser.Grew = Convert.ToInt32(crew.Value);
-            cruiser.MainCaliber = Convert.ToDouble(mainCaliber.Text);
-            cruiser.Scouts = Convert.ToInt32(numberOfScout.Value);
-            cruiser.ScoutsModel = scoutsModel.Text;
-            cruiser.ShipName = shipName.Text;
-            cruiser.ShipSeries = shipSeries.Text;
-            cruiser.ShipSpeed = Convert.ToDouble(shipSpeed.Text);
-            cruiser.Tonnage = Convert.ToInt32(shipTonnage.Text);
-            cruiser.TorpedoInTubes = Convert.ToInt32(torpedosInTube.Value);
-            cruiser.TorpedoSpeed = Convert.ToInt32(SpeedOfTorpedos.Text);
-            cruiser.TorpedoTubes = Convert.ToInt32(quanityOfTorpedoTube.Value);
-            cruiser.Towers = Convert.ToInt32(quanityOfTower.Value);
-            cruiserList.Add(cruiser);*/
-            
-            
+            bs = new BattleShips.Cruiser();                     
         }
         private void submarineButton_Click(object sender, EventArgs e)
         {
@@ -127,7 +114,7 @@ namespace oop_lab3
             mainCaliber.Show();
             SpeedOfTorpedos.Show();
             Clear();
-            bs = new BattleShips.Submarine();
+            var bs = new BattleShips.Submarine();
         }
         private void aerocarrierButton_Click(object sender, EventArgs e)
         {
@@ -146,7 +133,7 @@ namespace oop_lab3
             SpeedOfTorpedos.Hide();
             mainCaliber.Hide();
             Clear();
-            bs = new BattleShips.AeroCarrier();
+            var bs = new BattleShips.AeroCarrier();
         }
         private void battleWagonButton_Click(object sender, EventArgs e)
         {
@@ -165,7 +152,7 @@ namespace oop_lab3
             mainCaliber.Show();
             SpeedOfTorpedos.Hide();
             Clear();
-            bs = new BattleShips.BattleWagon();
+            var bs = new BattleShips.BattleWagon();
         }
         private void destroyerButton_Click(object sender, EventArgs e)
         {
@@ -184,7 +171,7 @@ namespace oop_lab3
             mainCaliber.Show();
             SpeedOfTorpedos.Show();
             Clear();
-            bs = new BattleShips.Destroyer();
+            var bs = new BattleShips.Destroyer();
         }
         private void battleBoatButton_Click(object sender, EventArgs e)
         {
@@ -203,7 +190,7 @@ namespace oop_lab3
             mainCaliber.Hide();
             SpeedOfTorpedos.Hide();
             Clear();
-            bs = new BattleShips.Boat();
+            var bs = new BattleShips.Boat();
         }
         public void Clear() 
         {
@@ -232,25 +219,26 @@ namespace oop_lab3
 
         private void addToList_Click(object sender, EventArgs e)
         {
+            var s=bs;
+            var builder=s.FactoryMethod();
+            builder.Build(new Form1());
             
         }
-        private  void AddToList(BattleShips.Cruiser ship)
-        {
-
-        }
+        
+        #region IShipItems
         public string Ship_name { get { return shipName.Text; } }
         public string Ship_series { get { return shipSeries.Text; } }
-        public int Ship_tonnage { get { return Convert.ToInt32(shipTonnage.Text); } }
+        public int Ship_tonnage { get { return (int)shipTonnage.Value; } }
         public int Towers { get { return (int)quanityOfTower.Value; } }
         public int Cannon { get { return (int)quanityOfCannonInTower.Value; } }
-        public double Mcaliber { get { return Convert.ToDouble(mainCaliber.Text); } }
+        public int Mcaliber { get { return (int)mainCaliber.Value; } }
         public int Adgun { get { return (int)quanityOfAirdefenceGun.Value; } }
-        public double Adcaliber { get { return Convert.ToDouble(airDefenceCaliber); } }
+        public int Adcaliber { get { return (int)airDefenceCaliber.Value; } }
         public int Ship_crew { get { return (int)crew.Value; } }
         public int Torpedo_tube { get { return (int)quanityOfTorpedoTube.Value; } }
         public int Torpedo_intube { get {return (int)torpedosInTube.Value;} }
-        public int Torpedo_speed { get {return Convert.ToInt32(SpeedOfTorpedos.Text);} }
-        public double Ship_speed { get { return Convert.ToDouble(shipSpeed.Text); } }
+        public int Torpedo_speed { get {return (int)SpeedOfTorpedos.Value;} }
+        public int Ship_speed { get { return (int)shipSpeed.Value; } }
         public int Aero_s_number { get { return (int)numberOfScout.Value; } }
         public int Aero_f_number { get { return (int)numberOfFighter.Value; } }
         public int Aero_b_number { get { return (int)numberOfBomber.Value; } }
@@ -260,5 +248,6 @@ namespace oop_lab3
         public string Aero_b_model { get { return bombersModel.Text; } }
         public string Aero_t_model { get { return torpedoPlaneModel.Text; } }
         public string Ship_country { get { return countryBox.Text; } }
+        #endregion
     }
 }
