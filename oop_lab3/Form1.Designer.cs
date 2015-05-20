@@ -415,7 +415,6 @@
             this.numberOfScout.Name = "numberOfScout";
             this.numberOfScout.Size = new System.Drawing.Size(38, 20);
             this.numberOfScout.TabIndex = 36;
-            this.numberOfScout.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
             // scoutsModel
             // 

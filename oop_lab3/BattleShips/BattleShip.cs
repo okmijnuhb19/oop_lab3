@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace oop_lab3.BattleShips
 {
-    abstract class BattleShip
+    public abstract class BattleShip
     {
         public string ShipName { get; set; }
         public string ShipSeries { get; set; }
@@ -16,6 +16,6 @@ namespace oop_lab3.BattleShips
         public int ShipSpeed { get; set; }
         public int AirDefenceGuns { get; set; }
         public int AirDefenceCaleber { get; set; }
-        abstract public BattleShipBuilder FactoryMethod();
+        public abstract BattleShipBuilder FactoryMethod();
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace oop_lab3.BattleShips
 {
-    class Boat:BattleShip
+    public class Boat:BattleShip
     {
         public override BattleShipBuilder FactoryMethod()
         {

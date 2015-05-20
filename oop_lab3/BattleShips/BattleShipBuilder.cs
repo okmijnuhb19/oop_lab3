@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace oop_lab3.BattleShips
 {
-    abstract class BattleShipBuilder
+    public abstract class BattleShipBuilder
     {
         abstract public void Build(IShipsItems shipItems);
     }

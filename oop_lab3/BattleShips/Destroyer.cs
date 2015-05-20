@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace oop_lab3.BattleShips
 {
-    class Destroyer: BattleShip
+    public class Destroyer: BattleShip
     {
         public int Towers { get; set; }
         public int CannonInTowers { get; set; }

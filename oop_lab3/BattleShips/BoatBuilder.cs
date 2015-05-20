@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace oop_lab3.BattleShips
 {
-    class BoatBuilder:BattleShipBuilder
+    public class BoatBuilder:BattleShipBuilder
     {
         public override void Build(IShipsItems shipItems)
         {
@@ -19,7 +20,7 @@ namespace oop_lab3.BattleShips
             boat.ShipSeries = shipItems.Ship_series;
             boat.ShipSpeed = shipItems.Ship_speed;
             boat.Tonnage = shipItems.Ship_tonnage;
-            shipItems.boatList.Add(boat);
+            Lists.boatList.Add(boat);
         }
     }
 }
