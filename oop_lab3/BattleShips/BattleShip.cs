@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace oop_lab3.BattleShips
 {
+    [Serializable]
     public abstract class BattleShip
     {
         public string ShipName { get; set; }

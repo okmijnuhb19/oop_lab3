@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace oop_lab3.BattleShips
 {
+    [Serializable]
     public class Boat:BattleShip
     {
         public override BattleShipBuilder FactoryMethod()

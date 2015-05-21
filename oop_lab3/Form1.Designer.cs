@@ -28,14 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cruiserButton = new System.Windows.Forms.Button();
-            this.destroyerButton = new System.Windows.Forms.Button();
-            this.battleWagonButton = new System.Windows.Forms.Button();
-            this.aerocarrierButton = new System.Windows.Forms.Button();
-            this.submarineButton = new System.Windows.Forms.Button();
-            this.battleBoatButton = new System.Windows.Forms.Button();
-            this.saveShipButton = new System.Windows.Forms.Button();
-            this.loadShipButton = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.serializeButton = new System.Windows.Forms.Button();
+            this.DeserializeCruiser = new System.Windows.Forms.Button();
             this.shipName = new System.Windows.Forms.TextBox();
             this.shipSeries = new System.Windows.Forms.TextBox();
             this.quanityOfTower = new System.Windows.Forms.NumericUpDown();
@@ -83,6 +78,22 @@
             this.shipSpeed = new System.Windows.Forms.NumericUpDown();
             this.shipTonnage = new System.Windows.Forms.NumericUpDown();
             this.SpeedOfTorpedos = new System.Windows.Forms.NumericUpDown();
+            this.battleBoatButton = new System.Windows.Forms.Button();
+            this.submarineButton = new System.Windows.Forms.Button();
+            this.aerocarrierButton = new System.Windows.Forms.Button();
+            this.battleWagonButton = new System.Windows.Forms.Button();
+            this.destroyerButton = new System.Windows.Forms.Button();
+            this.cruiserButton = new System.Windows.Forms.Button();
+            this.deserializeLineShip = new System.Windows.Forms.Button();
+            this.deserialiseSubmarine = new System.Windows.Forms.Button();
+            this.deserialiseCarrier = new System.Windows.Forms.Button();
+            this.deserializeDestroyer = new System.Windows.Forms.Button();
+            this.deserialiseBoat = new System.Windows.Forms.Button();
+            this.serializeLineShip = new System.Windows.Forms.Button();
+            this.serialiseSubmarine = new System.Windows.Forms.Button();
+            this.serialiseCarrier = new System.Windows.Forms.Button();
+            this.serializeDestroyer = new System.Windows.Forms.Button();
+            this.serializeBoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfCannonInTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfAirdefenceGun)).BeginInit();
@@ -100,91 +111,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.SpeedOfTorpedos)).BeginInit();
             this.SuspendLayout();
             // 
-            // cruiserButton
+            // serializeButton
             // 
-            this.cruiserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cruiserButton.Location = new System.Drawing.Point(12, 440);
-            this.cruiserButton.Name = "cruiserButton";
-            this.cruiserButton.Size = new System.Drawing.Size(75, 23);
-            this.cruiserButton.TabIndex = 1;
-            this.cruiserButton.Text = "Cruiser";
-            this.cruiserButton.UseVisualStyleBackColor = true;
-            this.cruiserButton.Click += new System.EventHandler(this.cruiserButton_Click);
+            this.serializeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.serializeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("serializeButton.BackgroundImage")));
+            this.serializeButton.Location = new System.Drawing.Point(462, 62);
+            this.serializeButton.Name = "serializeButton";
+            this.serializeButton.Size = new System.Drawing.Size(42, 43);
+            this.serializeButton.TabIndex = 8;
+            this.serializeButton.UseVisualStyleBackColor = true;
+            this.serializeButton.Click += new System.EventHandler(this.serializeButton_Click);
             // 
-            // destroyerButton
+            // DeserializeCruiser
             // 
-            this.destroyerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.destroyerButton.Location = new System.Drawing.Point(93, 440);
-            this.destroyerButton.Name = "destroyerButton";
-            this.destroyerButton.Size = new System.Drawing.Size(75, 23);
-            this.destroyerButton.TabIndex = 2;
-            this.destroyerButton.Text = "Destroyer";
-            this.destroyerButton.UseVisualStyleBackColor = true;
-            this.destroyerButton.Click += new System.EventHandler(this.destroyerButton_Click);
-            // 
-            // battleWagonButton
-            // 
-            this.battleWagonButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.battleWagonButton.Location = new System.Drawing.Point(174, 440);
-            this.battleWagonButton.Name = "battleWagonButton";
-            this.battleWagonButton.Size = new System.Drawing.Size(75, 23);
-            this.battleWagonButton.TabIndex = 3;
-            this.battleWagonButton.Text = "Linkor";
-            this.battleWagonButton.UseVisualStyleBackColor = true;
-            this.battleWagonButton.Click += new System.EventHandler(this.battleWagonButton_Click);
-            // 
-            // aerocarrierButton
-            // 
-            this.aerocarrierButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.aerocarrierButton.Location = new System.Drawing.Point(255, 440);
-            this.aerocarrierButton.Name = "aerocarrierButton";
-            this.aerocarrierButton.Size = new System.Drawing.Size(75, 23);
-            this.aerocarrierButton.TabIndex = 4;
-            this.aerocarrierButton.Text = "AeroCarrier";
-            this.aerocarrierButton.UseVisualStyleBackColor = true;
-            this.aerocarrierButton.Click += new System.EventHandler(this.aerocarrierButton_Click);
-            // 
-            // submarineButton
-            // 
-            this.submarineButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.submarineButton.Location = new System.Drawing.Point(336, 440);
-            this.submarineButton.Name = "submarineButton";
-            this.submarineButton.Size = new System.Drawing.Size(75, 23);
-            this.submarineButton.TabIndex = 5;
-            this.submarineButton.Text = "Submarine";
-            this.submarineButton.UseVisualStyleBackColor = true;
-            this.submarineButton.Click += new System.EventHandler(this.submarineButton_Click);
-            // 
-            // battleBoatButton
-            // 
-            this.battleBoatButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.battleBoatButton.Location = new System.Drawing.Point(417, 440);
-            this.battleBoatButton.Name = "battleBoatButton";
-            this.battleBoatButton.Size = new System.Drawing.Size(75, 23);
-            this.battleBoatButton.TabIndex = 6;
-            this.battleBoatButton.Text = "Boat";
-            this.battleBoatButton.UseVisualStyleBackColor = true;
-            this.battleBoatButton.Click += new System.EventHandler(this.battleBoatButton_Click);
-            // 
-            // saveShipButton
-            // 
-            this.saveShipButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.saveShipButton.Location = new System.Drawing.Point(460, 411);
-            this.saveShipButton.Name = "saveShipButton";
-            this.saveShipButton.Size = new System.Drawing.Size(75, 23);
-            this.saveShipButton.TabIndex = 8;
-            this.saveShipButton.Text = "Save";
-            this.saveShipButton.UseVisualStyleBackColor = true;
-            // 
-            // loadShipButton
-            // 
-            this.loadShipButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.loadShipButton.Location = new System.Drawing.Point(541, 411);
-            this.loadShipButton.Name = "loadShipButton";
-            this.loadShipButton.Size = new System.Drawing.Size(75, 23);
-            this.loadShipButton.TabIndex = 9;
-            this.loadShipButton.Text = "Load";
-            this.loadShipButton.UseVisualStyleBackColor = true;
+            this.DeserializeCruiser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.DeserializeCruiser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DeserializeCruiser.BackgroundImage")));
+            this.DeserializeCruiser.Location = new System.Drawing.Point(462, 9);
+            this.DeserializeCruiser.Name = "DeserializeCruiser";
+            this.DeserializeCruiser.Size = new System.Drawing.Size(42, 41);
+            this.DeserializeCruiser.TabIndex = 9;
+            this.DeserializeCruiser.UseVisualStyleBackColor = true;
+            this.DeserializeCruiser.Click += new System.EventHandler(this.DeserializeCruiser_Click);
             // 
             // shipName
             // 
@@ -536,11 +483,11 @@
             // addToList
             // 
             this.addToList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addToList.Location = new System.Drawing.Point(182, 405);
+            this.addToList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addToList.BackgroundImage")));
+            this.addToList.Location = new System.Drawing.Point(263, 341);
             this.addToList.Name = "addToList";
-            this.addToList.Size = new System.Drawing.Size(75, 23);
+            this.addToList.Size = new System.Drawing.Size(57, 58);
             this.addToList.TabIndex = 50;
-            this.addToList.Text = "Add to list";
             this.addToList.UseVisualStyleBackColor = true;
             this.addToList.Click += new System.EventHandler(this.addToList_Click);
             // 
@@ -702,11 +649,198 @@
             0,
             0});
             // 
+            // battleBoatButton
+            // 
+            this.battleBoatButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.battleBoatButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("battleBoatButton.BackgroundImage")));
+            this.battleBoatButton.Location = new System.Drawing.Point(300, 432);
+            this.battleBoatButton.Name = "battleBoatButton";
+            this.battleBoatButton.Size = new System.Drawing.Size(66, 32);
+            this.battleBoatButton.TabIndex = 6;
+            this.battleBoatButton.UseVisualStyleBackColor = true;
+            this.battleBoatButton.Click += new System.EventHandler(this.battleBoatButton_Click);
+            // 
+            // submarineButton
+            // 
+            this.submarineButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.submarineButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("submarineButton.BackgroundImage")));
+            this.submarineButton.Location = new System.Drawing.Point(374, 432);
+            this.submarineButton.Name = "submarineButton";
+            this.submarineButton.Size = new System.Drawing.Size(82, 32);
+            this.submarineButton.TabIndex = 5;
+            this.submarineButton.UseVisualStyleBackColor = true;
+            this.submarineButton.Click += new System.EventHandler(this.submarineButton_Click);
+            // 
+            // aerocarrierButton
+            // 
+            this.aerocarrierButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.aerocarrierButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("aerocarrierButton.BackgroundImage")));
+            this.aerocarrierButton.Location = new System.Drawing.Point(225, 431);
+            this.aerocarrierButton.Name = "aerocarrierButton";
+            this.aerocarrierButton.Size = new System.Drawing.Size(69, 34);
+            this.aerocarrierButton.TabIndex = 4;
+            this.aerocarrierButton.UseVisualStyleBackColor = true;
+            this.aerocarrierButton.Click += new System.EventHandler(this.aerocarrierButton_Click);
+            // 
+            // battleWagonButton
+            // 
+            this.battleWagonButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.battleWagonButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("battleWagonButton.BackgroundImage")));
+            this.battleWagonButton.Location = new System.Drawing.Point(152, 431);
+            this.battleWagonButton.Name = "battleWagonButton";
+            this.battleWagonButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.battleWagonButton.Size = new System.Drawing.Size(67, 34);
+            this.battleWagonButton.TabIndex = 3;
+            this.battleWagonButton.UseVisualStyleBackColor = true;
+            this.battleWagonButton.Click += new System.EventHandler(this.battleWagonButton_Click);
+            // 
+            // destroyerButton
+            // 
+            this.destroyerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.destroyerButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("destroyerButton.BackgroundImage")));
+            this.destroyerButton.Location = new System.Drawing.Point(79, 431);
+            this.destroyerButton.Name = "destroyerButton";
+            this.destroyerButton.Size = new System.Drawing.Size(67, 34);
+            this.destroyerButton.TabIndex = 2;
+            this.destroyerButton.UseVisualStyleBackColor = true;
+            this.destroyerButton.Click += new System.EventHandler(this.destroyerButton_Click);
+            // 
+            // cruiserButton
+            // 
+            this.cruiserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cruiserButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cruiserButton.BackgroundImage")));
+            this.cruiserButton.Location = new System.Drawing.Point(6, 431);
+            this.cruiserButton.Name = "cruiserButton";
+            this.cruiserButton.Size = new System.Drawing.Size(67, 34);
+            this.cruiserButton.TabIndex = 1;
+            this.cruiserButton.UseVisualStyleBackColor = true;
+            this.cruiserButton.Click += new System.EventHandler(this.cruiserButton_Click);
+            // 
+            // deserializeLineShip
+            // 
+            this.deserializeLineShip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.deserializeLineShip.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deserializeLineShip.BackgroundImage")));
+            this.deserializeLineShip.Location = new System.Drawing.Point(462, 120);
+            this.deserializeLineShip.Name = "deserializeLineShip";
+            this.deserializeLineShip.Size = new System.Drawing.Size(42, 41);
+            this.deserializeLineShip.TabIndex = 62;
+            this.deserializeLineShip.UseVisualStyleBackColor = true;
+            this.deserializeLineShip.Click += new System.EventHandler(this.deserializeLineShip_Click);
+            // 
+            // deserialiseSubmarine
+            // 
+            this.deserialiseSubmarine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.deserialiseSubmarine.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deserialiseSubmarine.BackgroundImage")));
+            this.deserialiseSubmarine.Location = new System.Drawing.Point(462, 225);
+            this.deserialiseSubmarine.Name = "deserialiseSubmarine";
+            this.deserialiseSubmarine.Size = new System.Drawing.Size(42, 41);
+            this.deserialiseSubmarine.TabIndex = 63;
+            this.deserialiseSubmarine.UseVisualStyleBackColor = true;
+            this.deserialiseSubmarine.Click += new System.EventHandler(this.deserialiseSubmarine_Click);
+            // 
+            // deserialiseCarrier
+            // 
+            this.deserialiseCarrier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.deserialiseCarrier.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deserialiseCarrier.BackgroundImage")));
+            this.deserialiseCarrier.Location = new System.Drawing.Point(835, 10);
+            this.deserialiseCarrier.Name = "deserialiseCarrier";
+            this.deserialiseCarrier.Size = new System.Drawing.Size(42, 41);
+            this.deserialiseCarrier.TabIndex = 64;
+            this.deserialiseCarrier.UseVisualStyleBackColor = true;
+            this.deserialiseCarrier.Click += new System.EventHandler(this.deserialiseCarrier_Click);
+            // 
+            // deserializeDestroyer
+            // 
+            this.deserializeDestroyer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.deserializeDestroyer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deserializeDestroyer.BackgroundImage")));
+            this.deserializeDestroyer.Location = new System.Drawing.Point(835, 121);
+            this.deserializeDestroyer.Name = "deserializeDestroyer";
+            this.deserializeDestroyer.Size = new System.Drawing.Size(42, 41);
+            this.deserializeDestroyer.TabIndex = 65;
+            this.deserializeDestroyer.UseVisualStyleBackColor = true;
+            this.deserializeDestroyer.Click += new System.EventHandler(this.deserializeDestroyer_Click);
+            // 
+            // deserialiseBoat
+            // 
+            this.deserialiseBoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.deserialiseBoat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deserialiseBoat.BackgroundImage")));
+            this.deserialiseBoat.Location = new System.Drawing.Point(835, 222);
+            this.deserialiseBoat.Name = "deserialiseBoat";
+            this.deserialiseBoat.Size = new System.Drawing.Size(42, 41);
+            this.deserialiseBoat.TabIndex = 66;
+            this.deserialiseBoat.UseVisualStyleBackColor = true;
+            this.deserialiseBoat.Click += new System.EventHandler(this.deserialiseBoat_Click);
+            // 
+            // serializeLineShip
+            // 
+            this.serializeLineShip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.serializeLineShip.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("serializeLineShip.BackgroundImage")));
+            this.serializeLineShip.Location = new System.Drawing.Point(462, 173);
+            this.serializeLineShip.Name = "serializeLineShip";
+            this.serializeLineShip.Size = new System.Drawing.Size(42, 43);
+            this.serializeLineShip.TabIndex = 67;
+            this.serializeLineShip.UseVisualStyleBackColor = true;
+            this.serializeLineShip.Click += new System.EventHandler(this.serializeLineShip_Click);
+            // 
+            // serialiseSubmarine
+            // 
+            this.serialiseSubmarine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.serialiseSubmarine.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("serialiseSubmarine.BackgroundImage")));
+            this.serialiseSubmarine.Location = new System.Drawing.Point(462, 277);
+            this.serialiseSubmarine.Name = "serialiseSubmarine";
+            this.serialiseSubmarine.Size = new System.Drawing.Size(42, 43);
+            this.serialiseSubmarine.TabIndex = 68;
+            this.serialiseSubmarine.UseVisualStyleBackColor = true;
+            this.serialiseSubmarine.Click += new System.EventHandler(this.serialiseSubmarine_Click);
+            // 
+            // serialiseCarrier
+            // 
+            this.serialiseCarrier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.serialiseCarrier.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("serialiseCarrier.BackgroundImage")));
+            this.serialiseCarrier.Location = new System.Drawing.Point(835, 67);
+            this.serialiseCarrier.Name = "serialiseCarrier";
+            this.serialiseCarrier.Size = new System.Drawing.Size(42, 43);
+            this.serialiseCarrier.TabIndex = 69;
+            this.serialiseCarrier.UseVisualStyleBackColor = true;
+            this.serialiseCarrier.Click += new System.EventHandler(this.serialiseCarrier_Click);
+            // 
+            // serializeDestroyer
+            // 
+            this.serializeDestroyer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.serializeDestroyer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("serializeDestroyer.BackgroundImage")));
+            this.serializeDestroyer.Location = new System.Drawing.Point(835, 172);
+            this.serializeDestroyer.Name = "serializeDestroyer";
+            this.serializeDestroyer.Size = new System.Drawing.Size(42, 43);
+            this.serializeDestroyer.TabIndex = 70;
+            this.serializeDestroyer.UseVisualStyleBackColor = true;
+            this.serializeDestroyer.Click += new System.EventHandler(this.serializeDestroyer_Click);
+            // 
+            // serializeBoat
+            // 
+            this.serializeBoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.serializeBoat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("serializeBoat.BackgroundImage")));
+            this.serializeBoat.Location = new System.Drawing.Point(835, 277);
+            this.serializeBoat.Name = "serializeBoat";
+            this.serializeBoat.Size = new System.Drawing.Size(42, 43);
+            this.serializeBoat.TabIndex = 71;
+            this.serializeBoat.UseVisualStyleBackColor = true;
+            this.serializeBoat.Click += new System.EventHandler(this.serializeBoat_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 477);
+            this.Controls.Add(this.serializeBoat);
+            this.Controls.Add(this.serializeDestroyer);
+            this.Controls.Add(this.serialiseCarrier);
+            this.Controls.Add(this.serialiseSubmarine);
+            this.Controls.Add(this.serializeLineShip);
+            this.Controls.Add(this.deserialiseBoat);
+            this.Controls.Add(this.deserializeDestroyer);
+            this.Controls.Add(this.deserialiseCarrier);
+            this.Controls.Add(this.deserialiseSubmarine);
+            this.Controls.Add(this.deserializeLineShip);
             this.Controls.Add(this.SpeedOfTorpedos);
             this.Controls.Add(this.shipTonnage);
             this.Controls.Add(this.shipSpeed);
@@ -754,8 +888,8 @@
             this.Controls.Add(this.quanityOfTower);
             this.Controls.Add(this.shipSeries);
             this.Controls.Add(this.shipName);
-            this.Controls.Add(this.loadShipButton);
-            this.Controls.Add(this.saveShipButton);
+            this.Controls.Add(this.DeserializeCruiser);
+            this.Controls.Add(this.serializeButton);
             this.Controls.Add(this.battleBoatButton);
             this.Controls.Add(this.submarineButton);
             this.Controls.Add(this.aerocarrierButton);
@@ -792,8 +926,8 @@
         private System.Windows.Forms.Button aerocarrierButton;
         private System.Windows.Forms.Button submarineButton;
         private System.Windows.Forms.Button battleBoatButton;
-        private System.Windows.Forms.Button saveShipButton;
-        private System.Windows.Forms.Button loadShipButton;
+        private System.Windows.Forms.Button serializeButton;
+        private System.Windows.Forms.Button DeserializeCruiser;
         private System.Windows.Forms.TextBox shipName;
         private System.Windows.Forms.TextBox shipSeries;
         private System.Windows.Forms.NumericUpDown quanityOfTower;
@@ -841,6 +975,16 @@
         private System.Windows.Forms.NumericUpDown shipSpeed;
         private System.Windows.Forms.NumericUpDown shipTonnage;
         private System.Windows.Forms.NumericUpDown SpeedOfTorpedos;
+        private System.Windows.Forms.Button deserializeLineShip;
+        private System.Windows.Forms.Button deserialiseSubmarine;
+        private System.Windows.Forms.Button deserialiseCarrier;
+        private System.Windows.Forms.Button deserializeDestroyer;
+        private System.Windows.Forms.Button deserialiseBoat;
+        private System.Windows.Forms.Button serializeLineShip;
+        private System.Windows.Forms.Button serialiseSubmarine;
+        private System.Windows.Forms.Button serialiseCarrier;
+        private System.Windows.Forms.Button serializeDestroyer;
+        private System.Windows.Forms.Button serializeBoat;
     }
 }
 

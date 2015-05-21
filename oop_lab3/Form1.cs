@@ -8,14 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace oop_lab3
 {    
-    public interface IForm1
-    {
-        
-    }
-
     public interface IShipsItems 
     {
         string Ship_name { get; }
@@ -253,5 +250,145 @@ namespace oop_lab3
         public string Aero_t_model { get { return torpedoPlaneModel.Text; } }
         public string Ship_country { get { return countryBox.Text; } }
         #endregion
+
+        private void serializeButton_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            // получаем поток, куда будем записывать сериализованный объект
+            using (FileStream fs = new FileStream("Cruisers.dat", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs,Lists.cruiserList);
+                BindingList<BattleShips.Cruiser> list = new BindingList<BattleShips.Cruiser>();
+                Lists.cruiserList = list;
+                listedCruisers.Refresh();
+                MessageBox.Show("Объекты типа Cruiser сериализованы!","Сообщение!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+        }
+        private void DeserializeCruiser_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream("Cruisers.dat", FileMode.OpenOrCreate))
+            {
+                BindingList<BattleShips.Cruiser> deserilizelist= (BindingList<BattleShips.Cruiser>)formatter.Deserialize(fs);
+                Lists.cruiserList = deserilizelist;
+                MessageBox.Show("Объекты типа Cruiser десериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void deserializeLineShip_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream("LineShip.dat", FileMode.OpenOrCreate))
+            {
+                BindingList<BattleShips.BattleWagon> deserilizelist = (BindingList<BattleShips.BattleWagon>)formatter.Deserialize(fs);
+                Lists.lineShipList = deserilizelist;
+                MessageBox.Show("Объекты типа BattleWagon десериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void serializeLineShip_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            // получаем поток, куда будем записывать сериализованный объект
+            using (FileStream fs = new FileStream("LineShip.dat", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, Lists.lineShipList);
+                BindingList<BattleShips.BattleWagon> list = new BindingList<BattleShips.BattleWagon>();
+                Lists.lineShipList = list;
+                listedCruisers.Refresh();
+                MessageBox.Show("Объекты типа BattleWagon сериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void deserialiseSubmarine_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream("Submarine.dat", FileMode.OpenOrCreate))
+            {
+                BindingList<BattleShips.Submarine> deserilizelist = (BindingList<BattleShips.Submarine>)formatter.Deserialize(fs);
+                Lists.submarineList = deserilizelist;
+                MessageBox.Show("Объекты типа Submarine десериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void serialiseSubmarine_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            // получаем поток, куда будем записывать сериализованный объект
+            using (FileStream fs = new FileStream("Submarine.dat", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, Lists.submarineList);
+                BindingList<BattleShips.Submarine> list = new BindingList<BattleShips.Submarine>();
+                Lists.submarineList = list;
+                listedCruisers.Refresh();
+                MessageBox.Show("Объекты типа Submarine сериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void deserialiseCarrier_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream("AeroCarrier.dat", FileMode.OpenOrCreate))
+            {
+                BindingList<BattleShips.AeroCarrier> deserilizelist = (BindingList<BattleShips.AeroCarrier>)formatter.Deserialize(fs);
+                Lists.aerocarrierList = deserilizelist;
+                MessageBox.Show("Объекты типа AeroCarrier десериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void serialiseCarrier_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            // получаем поток, куда будем записывать сериализованный объект
+            using (FileStream fs = new FileStream("AeroCarrier.dat", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, Lists.submarineList);
+                BindingList<BattleShips.AeroCarrier> list = new BindingList<BattleShips.AeroCarrier>();
+                Lists.aerocarrierList = list;
+                listedCruisers.Refresh();
+                MessageBox.Show("Объекты типа AeroCarrier сериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void deserializeDestroyer_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream("Destroyer.dat", FileMode.OpenOrCreate))
+            {
+                BindingList<BattleShips.Destroyer> deserilizelist = (BindingList<BattleShips.Destroyer>)formatter.Deserialize(fs);
+                Lists.destroyerList = deserilizelist;
+                MessageBox.Show("Объекты типа Destroyer десериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void serializeDestroyer_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            // получаем поток, куда будем записывать сериализованный объект
+            using (FileStream fs = new FileStream("Destroyer.dat", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, Lists.destroyerList);
+                BindingList<BattleShips.Destroyer> list = new BindingList<BattleShips.Destroyer>();
+                Lists.destroyerList = list;
+                listedCruisers.Refresh();
+                MessageBox.Show("Объекты типа Desrtoyer сериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void deserialiseBoat_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream("Boat.dat", FileMode.OpenOrCreate))
+            {
+                BindingList<BattleShips.Boat> deserilizelist = (BindingList<BattleShips.Boat>)formatter.Deserialize(fs);
+                Lists.boatList = deserilizelist;
+                MessageBox.Show("Объекты типа Boat десериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void serializeBoat_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            // получаем поток, куда будем записывать сериализованный объект
+            using (FileStream fs = new FileStream("Boat.dat", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, Lists.boatList);
+                BindingList<BattleShips.Boat> list = new BindingList<BattleShips.Boat>();
+                Lists.boatList = list;
+                listedCruisers.Refresh();
+                MessageBox.Show("Объекты типа Boat сериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
     }
 }
