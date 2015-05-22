@@ -63,8 +63,123 @@ namespace oop_lab3
             listedLineShips.DisplayMember = "ShipName";
             listedSubmarine.DataSource = Lists.submarineList;
             listedSubmarine.DisplayMember = "ShipName";
+            listedAeroCarrier.DoubleClick += listedAeroCarrier_DoubleClick;
+            listedBoat.DoubleClick += listedBoat_DoubleClick;
+            listedLineShips.DoubleClick += listedLineShips_DoubleClick;
+            listedDestroyer.DoubleClick += listedDestroyer_DoubleClick;
+            listedSubmarine.DoubleClick += listedSubmarine_DoubleClick;
+            listedCruisers.DoubleClick += listedCruisers_DoubleClick;
+        }
 
-
+        void listedCruisers_DoubleClick(object sender, EventArgs e)
+        {
+            cruiserButton_Click(this, EventArgs.Empty);
+            BattleShips.Cruiser ac = Lists.cruiserList[listedCruisers.SelectedIndex];
+            shipName.Text = ac.ShipName;
+            shipSeries.Text = ac.ShipSeries;
+            shipTonnage.Value = ac.Tonnage;
+            quanityOfAirdefenceGun.Value = ac.AirDefenceGuns;
+            airDefenceCaliber.Value = ac.AirDefenceCaleber;
+            crew.Value = ac.Grew;
+            shipSpeed.Value = ac.ShipSpeed;
+            countryBox.Text = ac.Country;
+            quanityOfTower.Value = ac.Towers;
+            quanityOfCannonInTower.Value = ac.CannonInTowers;
+            mainCaliber.Value = ac.MainCaliber;
+            torpedosInTube.Value = ac.TorpedoInTubes;
+            quanityOfTorpedoTube.Value = ac.TorpedoTubes;
+            SpeedOfTorpedos.Value = ac.TorpedoSpeed;
+            scoutsModel.Text = ac.ScoutsModel;
+            numberOfScout.Value = ac.Scouts;
+            Lists.cruiserList.RemoveAt(listedCruisers.SelectedIndex);
+        }
+        void listedSubmarine_DoubleClick(object sender, EventArgs e)
+        {
+            submarineButton_Click(this, EventArgs.Empty);
+            BattleShips.Submarine ac = Lists.submarineList[listedSubmarine.SelectedIndex];
+            shipName.Text = ac.ShipName;
+            shipSeries.Text = ac.ShipSeries;
+            shipTonnage.Value = ac.Tonnage;
+            quanityOfAirdefenceGun.Value = ac.AirDefenceGuns;
+            airDefenceCaliber.Value = ac.AirDefenceCaleber;
+            crew.Value = ac.Grew;
+            shipSpeed.Value = ac.ShipSpeed;
+            countryBox.Text = ac.Country;
+            torpedosInTube.Value = ac.TorpedoInTubes;
+            quanityOfTorpedoTube.Value = ac.TorpedoTubes;
+            SpeedOfTorpedos.Value = ac.TorpedoSpeed;
+            Lists.submarineList.RemoveAt(listedSubmarine.SelectedIndex);
+        }
+        void listedDestroyer_DoubleClick(object sender, EventArgs e)
+        {
+            destroyerButton_Click(this, EventArgs.Empty);
+            BattleShips.Destroyer ac = Lists.destroyerList[listedDestroyer.SelectedIndex];
+            shipName.Text = ac.ShipName;
+            shipSeries.Text = ac.ShipSeries;
+            shipTonnage.Value = ac.Tonnage;
+            quanityOfAirdefenceGun.Value = ac.AirDefenceGuns;
+            airDefenceCaliber.Value = ac.AirDefenceCaleber;
+            crew.Value = ac.Grew;
+            shipSpeed.Value = ac.ShipSpeed;
+            countryBox.Text = ac.Country;
+            quanityOfTower.Value = ac.Towers;
+            quanityOfCannonInTower.Value = ac.CannonInTowers;
+            mainCaliber.Value = ac.MainCaliber;
+            torpedosInTube.Value = ac.TorpedoInTubes;
+            quanityOfTorpedoTube.Value = ac.TorpedoTubes;
+            SpeedOfTorpedos.Value = ac.TorpedoSpeed;
+            Lists.destroyerList.RemoveAt(listedDestroyer.SelectedIndex);
+        }
+        void listedLineShips_DoubleClick(object sender, EventArgs e)
+        {
+            battleWagonButton_Click(this, EventArgs.Empty);
+            BattleShips.BattleWagon ac = Lists.lineShipList[listedLineShips.SelectedIndex];
+            shipName.Text = ac.ShipName;
+            shipSeries.Text = ac.ShipSeries;
+            shipTonnage.Value = ac.Tonnage;
+            quanityOfAirdefenceGun.Value = ac.AirDefenceGuns;
+            airDefenceCaliber.Value = ac.AirDefenceCaleber;
+            crew.Value = ac.Grew;
+            shipSpeed.Value = ac.ShipSpeed;
+            countryBox.Text = ac.Country;
+            quanityOfTower.Value = ac.Towers;
+            quanityOfCannonInTower.Value = ac.CannonInTowers;
+            mainCaliber.Value = ac.MainCaliber;
+            Lists.lineShipList.RemoveAt(listedLineShips.SelectedIndex);
+        }
+        void listedBoat_DoubleClick(object sender, EventArgs e)
+        {
+            battleBoatButton_Click(this, EventArgs.Empty);
+            BattleShips.Boat ac = Lists.boatList[listedBoat.SelectedIndex];
+            shipName.Text = ac.ShipName;
+            shipSeries.Text = ac.ShipSeries;
+            shipTonnage.Value = ac.Tonnage;
+            quanityOfAirdefenceGun.Value = ac.AirDefenceGuns;
+            airDefenceCaliber.Value = ac.AirDefenceCaleber;
+            crew.Value = ac.Grew;
+            shipSpeed.Value = ac.ShipSpeed;
+            countryBox.Text = ac.Country;
+            Lists.boatList.RemoveAt(listedBoat.SelectedIndex);
+        }
+        void listedAeroCarrier_DoubleClick(object sender, EventArgs e)
+        {
+            aerocarrierButton_Click(this,EventArgs.Empty);
+            BattleShips.AeroCarrier ac =Lists.aerocarrierList[listedAeroCarrier.SelectedIndex];
+            shipName.Text = ac.ShipName;
+            shipSeries.Text = ac.ShipSeries;
+            shipTonnage.Value = ac.Tonnage;
+            quanityOfAirdefenceGun.Value = ac.AirDefenceGuns;
+            airDefenceCaliber.Value = ac.AirDefenceCaleber;
+            crew.Value = ac.Grew;
+            shipSpeed.Value = ac.ShipSpeed;
+            numberOfBomber.Value = ac.Bombers;
+            numberOfFighter.Value = ac.Fighters;
+            numberOfTorpedoPlane.Value = ac.TorpedoPlanes;
+            torpedoPlaneModel.Text = ac.TorpedoPlanesModel;
+            bombersModel.Text = ac.BomberModel;
+            fightersModel.Text = ac.FighterModel;
+            countryBox.Text = ac.Country;
+            Lists.aerocarrierList.RemoveAt(listedAeroCarrier.SelectedIndex);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -253,26 +368,32 @@ namespace oop_lab3
 
         private void serializeButton_Click(object sender, EventArgs e)
         {
+            listedCruisers.BeginUpdate();
             BinaryFormatter formatter = new BinaryFormatter();
             // получаем поток, куда будем записывать сериализованный объект
             using (FileStream fs = new FileStream("Cruisers.dat", FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs,Lists.cruiserList);
-                BindingList<BattleShips.Cruiser> list = new BindingList<BattleShips.Cruiser>();
-                Lists.cruiserList = list;
-                listedCruisers.Refresh();
+                Lists.cruiserList.Clear();
                 MessageBox.Show("Объекты типа Cruiser сериализованы!","Сообщение!",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
+            listedCruisers.EndUpdate();
         }
         private void DeserializeCruiser_Click(object sender, EventArgs e)
         {
+            listedCruisers.BeginUpdate();
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream("Cruisers.dat", FileMode.OpenOrCreate))
             {
                 BindingList<BattleShips.Cruiser> deserilizelist= (BindingList<BattleShips.Cruiser>)formatter.Deserialize(fs);
-                Lists.cruiserList = deserilizelist;
+                foreach (BattleShips.Cruiser cr in deserilizelist) 
+                {
+                    Lists.cruiserList.Add(cr);
+                }
+               
                 MessageBox.Show("Объекты типа Cruiser десериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            listedCruisers.EndUpdate();
         }
         private void deserializeLineShip_Click(object sender, EventArgs e)
         {
@@ -280,7 +401,10 @@ namespace oop_lab3
             using (FileStream fs = new FileStream("LineShip.dat", FileMode.OpenOrCreate))
             {
                 BindingList<BattleShips.BattleWagon> deserilizelist = (BindingList<BattleShips.BattleWagon>)formatter.Deserialize(fs);
-                Lists.lineShipList = deserilizelist;
+                foreach (BattleShips.BattleWagon bw in deserilizelist)
+                {
+                    Lists.lineShipList.Add(bw);
+                }
                 MessageBox.Show("Объекты типа BattleWagon десериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -291,9 +415,7 @@ namespace oop_lab3
             using (FileStream fs = new FileStream("LineShip.dat", FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs, Lists.lineShipList);
-                BindingList<BattleShips.BattleWagon> list = new BindingList<BattleShips.BattleWagon>();
-                Lists.lineShipList = list;
-                listedCruisers.Refresh();
+                Lists.lineShipList.Clear();
                 MessageBox.Show("Объекты типа BattleWagon сериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -303,7 +425,10 @@ namespace oop_lab3
             using (FileStream fs = new FileStream("Submarine.dat", FileMode.OpenOrCreate))
             {
                 BindingList<BattleShips.Submarine> deserilizelist = (BindingList<BattleShips.Submarine>)formatter.Deserialize(fs);
-                Lists.submarineList = deserilizelist;
+                foreach (BattleShips.Submarine sm in deserilizelist)
+                {
+                    Lists.submarineList.Add(sm);
+                }
                 MessageBox.Show("Объекты типа Submarine десериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -314,9 +439,7 @@ namespace oop_lab3
             using (FileStream fs = new FileStream("Submarine.dat", FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs, Lists.submarineList);
-                BindingList<BattleShips.Submarine> list = new BindingList<BattleShips.Submarine>();
-                Lists.submarineList = list;
-                listedCruisers.Refresh();
+                Lists.submarineList.Clear();
                 MessageBox.Show("Объекты типа Submarine сериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -326,7 +449,10 @@ namespace oop_lab3
             using (FileStream fs = new FileStream("AeroCarrier.dat", FileMode.OpenOrCreate))
             {
                 BindingList<BattleShips.AeroCarrier> deserilizelist = (BindingList<BattleShips.AeroCarrier>)formatter.Deserialize(fs);
-                Lists.aerocarrierList = deserilizelist;
+                foreach (BattleShips.AeroCarrier ac in deserilizelist)
+                {
+                    Lists.aerocarrierList.Add(ac);
+                }
                 MessageBox.Show("Объекты типа AeroCarrier десериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -336,10 +462,8 @@ namespace oop_lab3
             // получаем поток, куда будем записывать сериализованный объект
             using (FileStream fs = new FileStream("AeroCarrier.dat", FileMode.OpenOrCreate))
             {
-                formatter.Serialize(fs, Lists.submarineList);
-                BindingList<BattleShips.AeroCarrier> list = new BindingList<BattleShips.AeroCarrier>();
-                Lists.aerocarrierList = list;
-                listedCruisers.Refresh();
+                formatter.Serialize(fs, Lists.aerocarrierList);
+                Lists.aerocarrierList.Clear();
                 MessageBox.Show("Объекты типа AeroCarrier сериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -349,7 +473,10 @@ namespace oop_lab3
             using (FileStream fs = new FileStream("Destroyer.dat", FileMode.OpenOrCreate))
             {
                 BindingList<BattleShips.Destroyer> deserilizelist = (BindingList<BattleShips.Destroyer>)formatter.Deserialize(fs);
-                Lists.destroyerList = deserilizelist;
+                foreach (BattleShips.Destroyer ds in deserilizelist)
+                {
+                    Lists.destroyerList.Add(ds);
+                }
                 MessageBox.Show("Объекты типа Destroyer десериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -360,9 +487,7 @@ namespace oop_lab3
             using (FileStream fs = new FileStream("Destroyer.dat", FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs, Lists.destroyerList);
-                BindingList<BattleShips.Destroyer> list = new BindingList<BattleShips.Destroyer>();
-                Lists.destroyerList = list;
-                listedCruisers.Refresh();
+                Lists.destroyerList.Clear();
                 MessageBox.Show("Объекты типа Desrtoyer сериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -372,7 +497,10 @@ namespace oop_lab3
             using (FileStream fs = new FileStream("Boat.dat", FileMode.OpenOrCreate))
             {
                 BindingList<BattleShips.Boat> deserilizelist = (BindingList<BattleShips.Boat>)formatter.Deserialize(fs);
-                Lists.boatList = deserilizelist;
+                foreach (BattleShips.Boat bo in deserilizelist)
+                {
+                    Lists.boatList.Add(bo);
+                }
                 MessageBox.Show("Объекты типа Boat десериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -383,9 +511,7 @@ namespace oop_lab3
             using (FileStream fs = new FileStream("Boat.dat", FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs, Lists.boatList);
-                BindingList<BattleShips.Boat> list = new BindingList<BattleShips.Boat>();
-                Lists.boatList = list;
-                listedCruisers.Refresh();
+                Lists.boatList.Clear();
                 MessageBox.Show("Объекты типа Boat сериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
