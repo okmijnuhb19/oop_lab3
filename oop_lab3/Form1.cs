@@ -42,9 +42,15 @@ namespace oop_lab3
     public partial class Form1 : Form,IShipsItems
     {
         BattleShips.BattleShip bs;
+        IPlugin plug;
+        static Type shipType;
         public Form1()
         {
             InitializeComponent();
+            pluginedShipButton.Hide();
+            listedUnknownShips.Hide();
+            serializeUnknowm.Hide();
+            deserialiseUnknown.Hide();
             Lists.cruiserList = new BindingList<BattleShips.Cruiser>();
             Lists.submarineList = new BindingList<BattleShips.Submarine>();
             Lists.lineShipList = new BindingList<BattleShips.BattleWagon>();
@@ -69,8 +75,25 @@ namespace oop_lab3
             listedDestroyer.DoubleClick += listedDestroyer_DoubleClick;
             listedSubmarine.DoubleClick += listedSubmarine_DoubleClick;
             listedCruisers.DoubleClick += listedCruisers_DoubleClick;
+            listedUnknownShips.DoubleClick += listedUnknownShips_DoubleClick;
         }
 
+        void listedUnknownShips_DoubleClick(object sender, EventArgs e)
+        {
+            pluginedShipButton_Click(this, EventArgs.Empty);
+            var ac = (IPluginedType)shipType.GetConstructor(Type.EmptyTypes).Invoke(new Object[0]);
+            ac = plug.UnknownList[listedUnknownShips.SelectedIndex];
+            shipName.Text = ac.ShipName;
+            shipSeries.Text = ac.ShipSeries;
+            shipTonnage.Value = ac.Tonnage;
+            quanityOfAirdefenceGun.Value = ac.AirDefenceGuns;
+            airDefenceCaliber.Value = ac.AirDefenceCaleber;
+            crew.Value = ac.Grew;
+            shipSpeed.Value = ac.ShipSpeed;
+            countryBox.Text = ac.Country;
+            plug.UnknownList.RemoveAt(listedBoat.SelectedIndex);
+            listedUnknownShips.Refresh();
+        }
         void listedCruisers_DoubleClick(object sender, EventArgs e)
         {
             cruiserButton_Click(this, EventArgs.Empty);
@@ -338,6 +361,7 @@ namespace oop_lab3
             var s = bs;
             var builder=s.FactoryMethod();
             builder.Build(this);
+            listedUnknownShips.Refresh();
             
         }
         
@@ -365,10 +389,9 @@ namespace oop_lab3
         public string Aero_t_model { get { return torpedoPlaneModel.Text; } }
         public string Ship_country { get { return countryBox.Text; } }
         #endregion
-
+        #region Serializaton
         private void serializeButton_Click(object sender, EventArgs e)
         {
-            listedCruisers.BeginUpdate();
             BinaryFormatter formatter = new BinaryFormatter();
             // получаем поток, куда будем записывать сериализованный объект
             using (FileStream fs = new FileStream("Cruisers.dat", FileMode.OpenOrCreate))
@@ -377,7 +400,6 @@ namespace oop_lab3
                 Lists.cruiserList.Clear();
                 MessageBox.Show("Объекты типа Cruiser сериализованы!","Сообщение!",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
-            listedCruisers.EndUpdate();
         }
         private void DeserializeCruiser_Click(object sender, EventArgs e)
         {
@@ -515,6 +537,76 @@ namespace oop_lab3
                 MessageBox.Show("Объекты типа Boat сериализованы!", "Сообщение!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        #endregion
 
+        private void addPlugin_Click(object sender, EventArgs e)
+        {
+            this.openFileDialog1.Filter =
+                "plugins (*.DLL)|*.DLL";
+
+            // Allow the user to select multiple images. 
+            this.openFileDialog1.Multiselect = true;
+            this.openFileDialog1.Title = "Dll Browser";
+            this.openFileDialog1.InitialDirectory = @"F:\Учеба\repository\oop_lab3\LandingShipPlugin\bin\Debug";
+            DialogResult dr = this.openFileDialog1.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                foreach (String dllPath in openFileDialog1.FileNames)
+                {
+                    var pluginAssembly = Assembly.LoadFrom(dllPath);
+
+                    foreach (Type type in pluginAssembly.GetExportedTypes())
+                    {
+                        if (type.GetInterfaces().Contains(typeof(IPlugin)))
+                        {
+                            var plugin = (IPlugin)type.GetConstructor(Type.EmptyTypes).Invoke(new Object[0]);
+                            plug = plugin;
+                            shipType = plugin.ShipType;
+                            var ship = plugin.ShipType.GetConstructor(Type.EmptyTypes).Invoke(new Object[0]);
+                            plugin.NewList();
+                            listedUnknownShips.DataSource =plug.UnknownList;
+                            listedUnknownShips.DisplayMember = "ShipName";
+            
+                            listedUnknownShips.Show();
+                            serializeUnknowm.Show();
+                            deserialiseUnknown.Show();
+                            pluginedShipButton.Show();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void pluginedShipButton_Click(object sender, EventArgs e)
+        {
+            numberOfFighter.Hide();
+            fightersModel.Hide();
+            numberOfScout.Hide();
+            scoutsModel.Hide();
+            numberOfBomber.Hide();
+            bombersModel.Hide();
+            torpedoPlaneModel.Hide();
+            numberOfTorpedoPlane.Hide();
+            quanityOfTower.Hide();
+            quanityOfCannonInTower.Hide();
+            quanityOfTorpedoTube.Hide();
+            torpedosInTube.Hide();
+            mainCaliber.Hide();
+            SpeedOfTorpedos.Hide();
+            Clear();             
+            var tmp=shipType.GetConstructor(Type.EmptyTypes).Invoke(new Object[0]);
+            bs =(BattleShips.BattleShip)tmp;
+        }
+
+        private void deserialiseUnknown_Click(object sender, EventArgs e)
+        {
+            plug.Deserialize();
+
+        }
+
+        private void serializeUnknowm_Click(object sender, EventArgs e)
+        {
+            plug.Serialize();
+        }
     }
 }

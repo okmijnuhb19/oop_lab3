@@ -94,6 +94,12 @@
             this.serialiseCarrier = new System.Windows.Forms.Button();
             this.serializeDestroyer = new System.Windows.Forms.Button();
             this.serializeBoat = new System.Windows.Forms.Button();
+            this.addPlugin = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.listedUnknownShips = new System.Windows.Forms.ListBox();
+            this.pluginedShipButton = new System.Windows.Forms.Button();
+            this.deserialiseUnknown = new System.Windows.Forms.Button();
+            this.serializeUnknowm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfCannonInTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanityOfAirdefenceGun)).BeginInit();
@@ -826,11 +832,70 @@
             this.serializeBoat.UseVisualStyleBackColor = true;
             this.serializeBoat.Click += new System.EventHandler(this.serializeBoat_Click);
             // 
+            // addPlugin
+            // 
+            this.addPlugin.Location = new System.Drawing.Point(886, 442);
+            this.addPlugin.Name = "addPlugin";
+            this.addPlugin.Size = new System.Drawing.Size(75, 23);
+            this.addPlugin.TabIndex = 72;
+            this.addPlugin.Text = "Add Plugin";
+            this.addPlugin.UseVisualStyleBackColor = true;
+            this.addPlugin.Click += new System.EventHandler(this.addPlugin_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // listedUnknownShips
+            // 
+            this.listedUnknownShips.FormattingEnabled = true;
+            this.listedUnknownShips.Location = new System.Drawing.Point(709, 328);
+            this.listedUnknownShips.Name = "listedUnknownShips";
+            this.listedUnknownShips.Size = new System.Drawing.Size(120, 95);
+            this.listedUnknownShips.TabIndex = 73;
+            // 
+            // pluginedShipButton
+            // 
+            this.pluginedShipButton.Location = new System.Drawing.Point(462, 431);
+            this.pluginedShipButton.Name = "pluginedShipButton";
+            this.pluginedShipButton.Size = new System.Drawing.Size(90, 33);
+            this.pluginedShipButton.TabIndex = 74;
+            this.pluginedShipButton.Text = "PluginedShip";
+            this.pluginedShipButton.UseVisualStyleBackColor = true;
+            this.pluginedShipButton.Click += new System.EventHandler(this.pluginedShipButton_Click);
+            // 
+            // deserialiseUnknown
+            // 
+            this.deserialiseUnknown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.deserialiseUnknown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deserialiseUnknown.BackgroundImage")));
+            this.deserialiseUnknown.Location = new System.Drawing.Point(835, 328);
+            this.deserialiseUnknown.Name = "deserialiseUnknown";
+            this.deserialiseUnknown.Size = new System.Drawing.Size(42, 41);
+            this.deserialiseUnknown.TabIndex = 75;
+            this.deserialiseUnknown.UseVisualStyleBackColor = true;
+            this.deserialiseUnknown.Click += new System.EventHandler(this.deserialiseUnknown_Click);
+            // 
+            // serializeUnknowm
+            // 
+            this.serializeUnknowm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.serializeUnknowm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("serializeUnknowm.BackgroundImage")));
+            this.serializeUnknowm.Location = new System.Drawing.Point(835, 380);
+            this.serializeUnknowm.Name = "serializeUnknowm";
+            this.serializeUnknowm.Size = new System.Drawing.Size(42, 43);
+            this.serializeUnknowm.TabIndex = 76;
+            this.serializeUnknowm.UseVisualStyleBackColor = true;
+            this.serializeUnknowm.Click += new System.EventHandler(this.serializeUnknowm_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 477);
+            this.Controls.Add(this.serializeUnknowm);
+            this.Controls.Add(this.deserialiseUnknown);
+            this.Controls.Add(this.pluginedShipButton);
+            this.Controls.Add(this.listedUnknownShips);
+            this.Controls.Add(this.addPlugin);
             this.Controls.Add(this.serializeBoat);
             this.Controls.Add(this.serializeDestroyer);
             this.Controls.Add(this.serialiseCarrier);
@@ -985,6 +1050,12 @@
         private System.Windows.Forms.Button serialiseCarrier;
         private System.Windows.Forms.Button serializeDestroyer;
         private System.Windows.Forms.Button serializeBoat;
+        private System.Windows.Forms.Button addPlugin;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ListBox listedUnknownShips;
+        private System.Windows.Forms.Button pluginedShipButton;
+        private System.Windows.Forms.Button deserialiseUnknown;
+        private System.Windows.Forms.Button serializeUnknowm;
     }
 }
 

@@ -1,0 +1,7 @@
+F:\Учеба\repository\oop_lab3\LandingShipPlugin\obj\Debug\LandingShipPlugin.csprojResolveAssemblyReference.cache
+F:\Учеба\repository\oop_lab3\LandingShipPlugin\bin\Debug\LandingShipPlugin.dll
+F:\Учеба\repository\oop_lab3\LandingShipPlugin\bin\Debug\LandingShipPlugin.pdb
+F:\Учеба\repository\oop_lab3\LandingShipPlugin\bin\Debug\oop_lab3.exe
+F:\Учеба\repository\oop_lab3\LandingShipPlugin\bin\Debug\oop_lab3.pdb
+F:\Учеба\repository\oop_lab3\LandingShipPlugin\obj\Debug\LandingShipPlugin.dll
+F:\Учеба\repository\oop_lab3\LandingShipPlugin\obj\Debug\LandingShipPlugin.pdb

@@ -64,6 +64,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IPlugin.cs" />
+    <Compile Include="IPluginedType.cs" />
     <Compile Include="Lists.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
